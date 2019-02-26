@@ -10,6 +10,31 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div class="d-flex flex-row mt-3 mb-3 justify-content-center top-bar-head">
+        <div class="d-flex flex-row flex-wrap mt-3 ml-3" id="topics-holder">
+
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-9 d-flex flex-row flex-wrap" id="gif-print-area">
+
+            </div>
+            <div class="col-3" id="right-form-area">
+                <form>
+                    <div class="form-group">
+                        <label for="user-topic-input">Add a topic (letters only)</label>
+                        <input id="user-topic-input" type="text" class="form-control" required>
+                    </div>
+
+                    <button class="btn btn-info" type="submit" id="submit-button">Submit</button>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
     
 
     <!--Scripts Below Me-->
@@ -19,7 +44,8 @@
 
     <script type="text/javascript" src="assets/js/globals.js"></script>
     <script type="text/javascript" src="assets/js/ajax.js"></script>
-    <script type="text/javascript" src="assets/js/append.js"></script>
     <script type="text/javascript" src="assets/js/events.js"></script>
+    <script type="text/javascript" src="assets/js/append.js"></script>
+
 </body>
 </html>

@@ -5,6 +5,7 @@ function getGif() {
         method: "GET"
     }).then(function(response) {
         console.log(response);
+        pullResults = response;
     })
 
 };

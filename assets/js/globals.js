@@ -5,9 +5,11 @@ var fTopics = ["memes", "raccoons", "possums", "owls", "simpsons", "video games"
 
 var baseURL = "https://api.giphy.com/v1/gifs/search?api_key=";
 var apiKey = "w3xsw57LACA34eVHdDWeI3mGfV9xiX94";
-var resultLimit = "10"
+var resultLimit = 10;
 var searchValue = "";
 var queryURL = "";
+
+var pullResults;
 
 
 
