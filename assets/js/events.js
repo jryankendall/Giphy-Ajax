@@ -7,6 +7,7 @@ function initHandlers() {
         searchValue = $(this).val();
         queryBuilder();
         getGif();
+        appendGifs(pullResults);
     });
 
     $("#submit-button").on("click", function() {
@@ -34,6 +35,12 @@ function initHandlers() {
 
         }
     });
+
+    //Handles the user clicking on a gif
+    $(document.body).on("click", ".displayed-gif", function() {
+        clickedGifId = $(this).attr("id");
+        clickGif(clickedGifId);
+    })
 };
 
 //Wipes topic list, alphabetizes ftopics array, reprints it
@@ -51,9 +58,43 @@ function printfTopics(){
     };
 };
 
+
+//Makes sure the input box doesnt have numbers or non-standard characters
 function validateTextbox(thisEvent, thisValue) {
     var inputValue = thisValue;
     if ( !/^[a-zA-Z\s]*$/g.test(inputValue) || inputValue.trim() == "" ) {
         return false;
     } else {return true;}
+};
+
+function appendGifs(sentData) {
+    for (var i = 0; i < sentData.length; i++) {
+        var newImg = $("<img>");
+        var imgSrc = sentData[i].images.fixed_height_still.url;
+        newImg.attr("src", imgSrc)
+            .attr("alt", "Gif " + i)
+            .addClass("displayed-gif still-gif")
+            .attr("id", "gif-num-" + i);
+        $("#gif-print-area").append(newImg);
+    }
+}
+
+function clickGif(clickedGif) {
+    var theGif = $("#" + clickedGif);
+    var gifSource = theGif.attr("src");
+
+    if (theGif.hasClass("still-gif")) {
+        var newSrc = gifSource.substring(0, gifSource.length - 6) + ".gif";
+        theGif.attr("src", newSrc);
+        theGif.removeClass("still-gif");
+        theGif.addClass("moving-gif");
+    } else if
+    ( theGif.hasClass("moving-gif") ) {
+        var newSrc = gifSource.substring(0, gifSource.length - 4) + "_s.gif";
+        theGif.attr("src", newSrc);
+        theGif.removeClass("moving-gif");
+        theGif.addClass("still-gif");
+    };
+
+
 };
