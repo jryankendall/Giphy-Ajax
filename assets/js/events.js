@@ -40,7 +40,7 @@ function initHandlers() {
     $(document.body).on("click", ".displayed-gif", function() {
         clickedGifId = $(this).attr("id");
         clickGif(clickedGifId);
-    })
+    });
 };
 
 //Wipes topic list, alphabetizes ftopics array, reprints it
@@ -76,8 +76,8 @@ function appendGifs(sentData) {
             .addClass("displayed-gif still-gif")
             .attr("id", "gif-num-" + i);
         $("#gif-print-area").append(newImg);
-    }
-}
+    };
+};
 
 function clickGif(clickedGif) {
     var theGif = $("#" + clickedGif);
