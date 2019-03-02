@@ -5,9 +5,9 @@ function initHandlers() {
     //Otherwise, it would only handle buttons that were in the DOM before this function was called
     $("body").on("click", ".topic-button", function() {
         searchValue = $(this).val();
+        clearDisplay();
         queryBuilder();
         getGif();
-        appendGifs(pullResults);
     });
 
     $("#submit-button").on("click", function() {
@@ -73,7 +73,7 @@ function appendGifs(sentData) {
         var imgSrc = sentData[i].images.fixed_height_still.url;
         newImg.attr("src", imgSrc)
             .attr("alt", "Gif " + i)
-            .addClass("displayed-gif still-gif")
+            .addClass("displayed-gif still-gif pb-3 pr-1")
             .attr("id", "gif-num-" + i);
         $("#gif-print-area").append(newImg);
     };

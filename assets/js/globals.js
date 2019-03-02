@@ -8,6 +8,9 @@ var apiKey = "w3xsw57LACA34eVHdDWeI3mGfV9xiX94";
 var resultLimit = 10;
 var searchValue = "";
 var queryURL = "";
+var gifRating = "PG";
+var searchOffset = 0;
+var searchLanguage = "en";
 
 var pullResults;
 
@@ -16,5 +19,16 @@ var pullResults;
 //functions
 
 function queryBuilder(){
-    queryURL = baseURL + apiKey + "&q=" + searchValue + "&limit=" + resultLimit;
+    if ( document.getElementById("random-offset-checkbox").checked ) {
+        searchOffset = Math.floor(Math.random() * 101);
+    } else 
+    {
+        null;
+    }
+    queryURL = baseURL + apiKey + "&q=" + searchValue + "&limit=" + resultLimit + "&offset=" + searchOffset + "&rating=" + gifRating + "&lang=" + searchLanguage;
+
 };
+
+function clearDisplay() {
+    $("#gif-print-area").empty();
+}

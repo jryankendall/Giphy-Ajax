@@ -10,15 +10,19 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="d-flex flex-row mt-3 mb-3 justify-content-center top-bar-head">
+    <div class="d-flex flex-row flex-wrap mt-3 mb-3 justify-content-center top-bar-head">
         <div class="d-flex flex-row flex-wrap mt-3 ml-3" id="topics-holder">
 
+        </div>
+        <div class="form-group col-6 offset-3">
+            <input type="checkbox" class="form-check-input" id="random-offset-checkbox" checked>
+            <label for="random-offset-checkbox" class="form-check-label">&nbspRandomize Offset</label>
         </div>
     </div>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-9 d-flex flex-row flex-wrap" id="gif-print-area">
+            <div class="col-9 d-flex flex-row flex-wrap justify-content-around mb-2" id="gif-print-area">
 
             </div>
             <div class="col-3" id="right-form-area">
@@ -30,6 +34,8 @@
 
                     <button class="btn btn-info" type="submit" id="submit-button">Submit</button>
                 </form>
+
+                <p>After getting some gifs on the, left click on one to make it animate. Click an animating one to stop it and return it to a still image.</p>
 
             </div>
         </div>

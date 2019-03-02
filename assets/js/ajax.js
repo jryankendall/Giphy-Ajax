@@ -6,6 +6,7 @@ function getGif() {
     }).then(function(response) {
         console.log(response);
         pullResults = response.data;
+        appendGifs(pullResults);
     })
 
 };
