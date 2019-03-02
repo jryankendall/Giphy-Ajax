@@ -22,12 +22,30 @@ h1 {
   font-size: 1.6rem;
 }
 
+body {
+  background-color: #c5cbe3;
+}
+
 .top-bar-head {
   border-bottom: solid 1px black;
+  background-color: #d79922;
 }
 
 label {
   font-weight: bold;
+}
+
+.gif-div {
+  cursor: pointer;
+  border: solid 2px #4056a1;
+}
+
+.rating-label {
+  font-weight: bold;
+}
+
+.p-center {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

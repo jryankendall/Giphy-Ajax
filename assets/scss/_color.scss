@@ -1,0 +1,26 @@
+$artsy : (
+
+    'primary' : #d79922,
+    'secondary' : #efe1ba,
+    'tertiary' : #f13c1f,
+    'quaternary' : #4056a1,
+    'quinary': #c5cbe3
+    
+);
+
+
+$palette: $artsy;
+
+$primary-color: map-get($palette, 'primary');
+
+$secondary-color: map-get($palette, 'secondary');
+
+$tertiary-color: map-get($palette, 'tertiary');
+
+$quaternary-color: map-get($palette, 'quaternary');
+
+$primary-font: map-get($palette, 'primaryfont');
+
+$secondary-font: map-get($palette, 'secondaryfont');
+
+$quinary-color: map-get($palette, 'quinary');

@@ -25,7 +25,8 @@ function queryBuilder(){
     {
         null;
     }
-    queryURL = baseURL + apiKey + "&q=" + searchValue + "&limit=" + resultLimit + "&offset=" + searchOffset + "&rating=" + gifRating + "&lang=" + searchLanguage;
+    queryURL = baseURL + apiKey + "&q=" + searchValue + "&limit=" + resultLimit + "&offset=" + searchOffset 
+        + "&rating=" + gifRating + "&lang=" + searchLanguage;
 
 };
 

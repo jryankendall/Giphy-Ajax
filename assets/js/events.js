@@ -10,6 +10,8 @@ function initHandlers() {
         getGif();
     });
 
+
+    //Submits user input string
     $("#submit-button").on("click", function() {
         var userInput = $("#user-topic-input").val().trim().toLowerCase();
         event.preventDefault();
@@ -41,6 +43,11 @@ function initHandlers() {
         clickedGifId = $(this).attr("id");
         clickGif(clickedGifId);
     });
+
+    $("#clear-button").on("click", function() {
+        event.preventDefault();
+        clearDisplay();
+    })
 };
 
 //Wipes topic list, alphabetizes ftopics array, reprints it
@@ -70,15 +77,25 @@ function validateTextbox(thisEvent, thisValue) {
 function appendGifs(sentData) {
     for (var i = 0; i < sentData.length; i++) {
         var newImg = $("<img>");
+        var newDiv = $("<div>");
+        var newP = $("<p>");
         var imgSrc = sentData[i].images.fixed_height_still.url;
+        var imgRating = sentData[i].rating;
+
+        newDiv.addClass("gif-div mt-3 mr-1 d-flex flex-column flex-wrap")
         newImg.attr("src", imgSrc)
             .attr("alt", "Gif " + i)
-            .addClass("displayed-gif still-gif pb-3 pr-1")
+            .addClass("displayed-gif still-gif")
             .attr("id", "gif-num-" + i);
-        $("#gif-print-area").append(newImg);
+        newP.html("<span class='rating-label'>Rating:</span> " + imgRating.toUpperCase())
+            .addClass("p-center");
+        newDiv.append(newImg);
+        newDiv.append(newP);
+        $("#gif-print-area").append(newDiv);
     };
 };
 
+//Swaps still gif with the animated one or vice versa, when clicked
 function clickGif(clickedGif) {
     var theGif = $("#" + clickedGif);
     var gifSource = theGif.attr("src");
