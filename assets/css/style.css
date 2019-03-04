@@ -35,6 +35,13 @@ label {
   font-weight: bold;
 }
 
+@media (max-width: 576px) {
+  .whole-page-row {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+}
+
 .gif-div {
   cursor: pointer;
   border: solid 2px #4056a1;

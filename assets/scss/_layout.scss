@@ -7,3 +7,10 @@
 label {
     font-weight: bold;
 }
+
+.whole-page-row {
+    @include for-phone-only {
+        display: flex;
+        flex-flow: column-reverse;
+    }
+}
